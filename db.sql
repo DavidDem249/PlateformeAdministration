@@ -1,0 +1,22 @@
+
+CREATE DATABASE IF NOT EXISTS admin;
+
+CREATE TABLE IF NOT EXISTS groupes(
+    id_group INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(255) NOT NULL
+    
+)ENGINE = INNODB;
+
+CREATE TABLE IF NOT EXISTS eleves(
+    id_elev INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(100),
+    prenom VARCHAR(155),
+    age INT NOT NULL,
+    sexe ENUM('M', 'F'),
+    id_group INT NOT NULL,
+    FOREIGN KEY(id_group) REFERENCES groupes(id_group),
+    Archive INT NOT NULL
+)ENGINE=INNODB;
+
+
+
